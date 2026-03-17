@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vibe Personal Site (Static Preview)</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'brand-pink': '#FF90E8',
+                        'brand-yellow': '#FFC900',
+                        'brand-blue': '#23A094',
+                        'brand-green': '#90F1EF',
+                        'bg-main': '#F0F0F0',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
+        
+        body {
+            font-family: 'Space Grotesk', sans-serif;
+            background-color: #F0F0F0;
+        }
+
+        .neo-button {
+            background-color: #FF90E8;
+            border: 2px solid black;
+            padding: 0.75rem 1.5rem;
+            font-weight: 900;
+            box-shadow: 4px 4px 0px 0px rgba(0,0,0,1);
+            transition: all 0.2s;
+            cursor: pointer;
+        }
+        .neo-button:hover {
+            transform: translate(-2px, -2px);
+            box-shadow: 6px 6px 0px 0px rgba(0,0,0,1);
+        }
+        .neo-button:active {
+            transform: translate(0px, 0px);
+            box-shadow: 2px 2px 0px 0px rgba(0,0,0,1);
+        }
+
+        .neo-card {
+            background-color: white;
+            border: 2px solid black;
+            box-shadow: 8px 8px 0px 0px rgba(0,0,0,1);
+            transition: all 0.3s;
+        }
+        .neo-card:hover {
+            transform: translate(-4px, -4px);
+            box-shadow: 12px 12px 0px 0px rgba(0,0,0,1);
+        }
+
+        .highlight-pink {
+            background-color: #FF90E8;
+            padding: 0 0.2em;
+        }
+        .highlight-blue {
+            background-color: #90F1EF;
+            padding: 0 0.2em;
+        }
+    </style>
+</head>
+<body class="min-h-screen p-6">
+
+    <!-- Navbar Placeholder -->
+    <nav class="fixed top-6 left-1/2 -translate-x-1/2 z-50 w-[90%] max-w-3xl">
+        <div class="bg-white border-2 border-black rounded-full px-6 py-3 flex items-center justify-between shadow-[6px_6px_0px_0px_rgba(0,0,0,1)]">
+            <div class="font-black text-xl">西门美月匈XD</div>
+            <div class="text-sm font-bold text-gray-500">Static Preview Mode</div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="pt-32 pb-20 px-6 max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-12">
+        <div class="flex-1 space-y-8">
+            <div class="space-y-4">
+                <h1 class="text-5xl md:text-7xl font-black leading-tight">
+                    我是 <br />
+                    <span class="highlight-pink">西门美月匈XD</span>, <br />
+                    A Product Manager, <br />
+                    练习时长 <span class="highlight-blue">两年半</span>
+                </h1>
+                <p class="text-lg md:text-xl font-medium text-gray-700 max-w-lg">
+                    Bilibili Creator | Digital Writer | Hyperactive Otaku <br />
+                    toB PM by day, Vibe Coder by night. _[ö_ö]_ <br />
+                    A PASSIONATE FOOOOOL !!!
+                </p>
+            </div>
+            <button class="neo-button flex items-center gap-2">
+                More about me (Requires Node.js)
+            </button>
+        </div>
+        <div class="flex-1 flex justify-center">
+            <div class="relative">
+                <div class="w-64 h-64 md:w-80 md:h-80 bg-white border-2 border-black rounded-3xl overflow-hidden shadow-[12px_12px_0px_0px_rgba(0,0,0,1)]">
+                    <img 
+                        src="https://picsum.photos/seed/avatar/400/400" 
+                        alt="Avatar" 
+                        className="w-full h-full object-cover"
+                    />
+                </div>
+                <div class="absolute -top-4 -right-4 w-12 h-12 bg-brand-pink border-2 border-black rounded-full flex items-center justify-center shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]">
+                    <span class="text-xl">✨</span>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Notification Banner -->
+    <div class="fixed bottom-0 left-0 w-full bg-brand-yellow border-t-2 border-black p-4 text-center z-50">
+        <p class="font-bold text-lg">
+            ⚠️ This is a static preview. To see the full interactive website, please install <a href="https://nodejs.org/" class="underline font-black" target="_blank">Node.js</a> and restart the app.
+        </p>
+    </div>
+
+</body>
+</html>
