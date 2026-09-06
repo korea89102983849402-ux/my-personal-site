@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>学习路径规划师 - 项目展示</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap');
+        body { font-family: 'Inter', sans-serif; }
+        .neo-card {
+            background: white;
+            border: 2px solid black;
+            box-shadow: 6px 6px 0px 0px rgba(0,0,0,1);
+            transition: all 0.2s ease;
+        }
+        .neo-button {
+            background: #000;
+            color: white;
+            border: 2px solid black;
+            padding: 0.5rem 1.5rem;
+            font-weight: bold;
+            transition: all 0.2s ease;
+        }
+        .neo-button:hover {
+            transform: translate(-2px, -2px);
+            box-shadow: 4px 4px 0px 0px rgba(0,0,0,0.2);
+        }
+    </style>
+</head>
+<body class="bg-[#FFF0F5] min-h-screen p-8">
+    <div class="max-w-4xl mx-auto space-y-12">
+        <!-- Header -->
+        <header class="flex justify-between items-center">
+            <div class="space-y-2">
+                <div class="inline-block bg-brand-yellow border-2 border-black px-3 py-1 text-xs font-bold uppercase bg-yellow-300">AI Powered</div>
+                <h1 class="text-5xl font-black">学习路径规划师</h1>
+                <p class="text-xl text-gray-700 font-medium">Learning Path Planner</p>
+            </div>
+            <a href="/" class="neo-button bg-white text-black hover:bg-gray-100">返回主页</a>
+        </header>
+
+        <!-- Main Content -->
+        <main class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <!-- Project Preview -->
+            <div class="neo-card p-2 rounded-xl overflow-hidden">
+                <div class="bg-gray-100 aspect-video w-full flex items-center justify-center border border-black/10">
+                    <div class="text-center space-y-2">
+                        <span class="text-4xl">🗺️</span>
+                        <p class="text-gray-500 font-bold">应用界面预览</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project Details -->
+            <div class="space-y-8">
+                <div class="neo-card p-6 rounded-xl bg-white">
+                    <h3 class="text-2xl font-black mb-4">项目简介</h3>
+                    <p class="text-gray-700 leading-relaxed">
+                        这是一个基于 <strong>Google Gemini AI</strong> 的智能学习助手。用户只需输入学习目标、当前水平和可用时间，AI 就会自动生成一份详细的、分阶段的学习路线图，并推荐相关的学习资源（视频、文章等）。
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-2 gap-4">
+                    <div class="neo-card p-4 rounded-xl bg-blue-100">
+                        <h4 class="font-bold mb-2">技术栈</h4>
+                        <ul class="text-sm space-y-1 text-gray-700">
+                            <li>• React + Vite</li>
+                            <li>• TypeScript</li>
+                            <li>• Express (Node.js)</li>
+                            <li>• SQLite Database</li>
+                            <li>• Google GenAI SDK</li>
+                        </ul>
+                    </div>
+                    <div class="neo-card p-4 rounded-xl bg-green-100">
+                        <h4 class="font-bold mb-2">核心功能</h4>
+                        <ul class="text-sm space-y-1 text-gray-700">
+                            <li>• AI 智能规划</li>
+                            <li>• 学习进度追踪</li>
+                            <li>• 资源自动推荐</li>
+                            <li>• 历史记录保存</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- Footer Info -->
+        <footer class="text-center text-gray-500 font-mono text-sm">
+            <p>Designed & Developed by 杨桃荔枝煎</p>
+            <p class="mt-2">源代码已归档于 /public/学习路径规划师 目录</p>
+        </footer>
+    </div>
+</body>
+</html>
