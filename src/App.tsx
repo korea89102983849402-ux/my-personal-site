@@ -17,6 +17,7 @@ import { StockModal } from './components/StockModal';
 import { TravelModal } from './components/TravelModal';
 import { TKModal } from './components/TKModal';
 import { ArticleModal } from './components/ArticleModal';
+import { SnowGuardModal } from './components/SnowGuardModal';
 import { 
   Search, 
   Mail, 
@@ -726,7 +727,7 @@ const VideosPage = () => (
   </motion.div>
 );
 
-const ProductsPage = () => (
+const ProductsPage = ({ onSnowGuardClick }: { onSnowGuardClick?: () => void }) => (
   <motion.div 
     initial={{ opacity: 0, y: 20 }}
     animate={{ opacity: 1, y: 0 }}
@@ -741,7 +742,7 @@ const ProductsPage = () => (
         Vibe <span className="highlight-yellow">Workshop</span>
       </h2>
       <p className="text-xl font-medium text-gray-700">
-        为了让生活和工作简单、有趣一点点，和 AI 大聪明聊出来一些代码边角料。
+        学习和工作闲暇之余创造的灵感小宇宙
       </p>
     </div>
 
@@ -753,8 +754,16 @@ const ProductsPage = () => (
       {[
         { id: '001', title: '学习路径规划师', desc: '根据你的目标，定制专属的学习路线图。', status: 'Released', date: '2024.03.10', color: 'bg-brand-yellow', link: '/planner/index.html', buttonText: 'View Product' },
         { id: '002', title: '破工非遗——鄂州雕花剪纸', desc: '调研报告 PPT（发展态势与数字转型之路）', status: 'Report', date: '2026.03.13', color: 'bg-brand-pink', link: encodeURI('/（PPT）破工非遗——鄂州雕花剪纸的发展态势与数字转型之路调查报告.pptx'), buttonText: '下载 PPT', download: true },
+        { id: '003', title: '苏州园林策划案', desc: '策划案 Word 文档（.docx）下载入口。', status: 'Plan', date: '2026.09.06', color: 'bg-brand-blue', link: encodeURI('/苏州园林策划案.docx'), buttonText: '下载策划案', download: true },
+        { id: '004', title: '清明上河图策划案', desc: '策划案 Word 文档（.docx）下载入口。', status: 'Plan', date: '2026.09.06', color: 'bg-brand-green', link: encodeURI('/清明上河图策划案.docx'), buttonText: '下载策划案', download: true },
+        { id: '005', title: '侠义襄阳策划案', desc: '策划案 Word 文档（.docx）下载入口。', status: 'Plan', date: '2026.09.06', color: 'bg-brand-pink', link: encodeURI('/侠义襄阳策划案.docx'), buttonText: '下载策划案', download: true },
+        { id: '006', title: '王老吉“吉崽”IP策划案', desc: '策划案 Word 文档（.docx）下载入口。', status: 'Plan', date: '2026.09.06', color: 'bg-brand-yellow', link: encodeURI('/王老吉“吉崽”IP策划案.docx'), buttonText: '下载策划案', download: true },
+        { id: '007', title: '武汉硚口工业焕新策划案', desc: '策划案 Word 文档（.docx）下载入口。', status: 'Plan', date: '2026.09.06', color: 'bg-brand-blue', link: encodeURI('/武汉硚口工业焕新策划案.docx'), buttonText: '下载策划案', download: true },
+        { id: '008', title: '“恐龙冒险队”科普IP策划', desc: '策划案 Word 文档（.docx）下载入口。', status: 'Plan', date: '2026.09.06', color: 'bg-brand-green', link: encodeURI('/“恐龙冒险队”科普IP策划.docx'), buttonText: '下载策划案', download: true },
+        { id: '009', title: '《斩神》IP出海策划案', desc: '策划案 Word 文档（.docx）下载入口。', status: 'Plan', date: '2026.09.06', color: 'bg-brand-pink', link: encodeURI('/《斩神》IP出海策划案.docx'), buttonText: '下载策划案', download: true },
+        { id: '010', title: '雪山萌卫队IP策划案', desc: '点击查看展板并下载策划案 PDF。', status: 'Plan', date: '2026.09.06', color: 'bg-brand-blue', buttonText: '查看展板', onClick: onSnowGuardClick },
       ].map((product, i) => (
-        <div key={i} className="neo-card p-8 space-y-8 flex flex-col justify-between">
+        <div key={i} onClick={product.onClick} className={`neo-card p-8 space-y-8 flex flex-col justify-between ${product.onClick ? 'cursor-pointer hover:bg-gray-50' : ''}`}>
           <div className="space-y-6">
             <div className="flex justify-between items-start">
               <div className="bg-black text-white text-[10px] font-bold px-2 py-1 rounded"># {product.id}</div>
@@ -767,15 +776,22 @@ const ProductsPage = () => (
             </div>
           </div>
           <div className="space-y-4">
-            <a 
-              href={product.link || '#'} 
-              target="_blank"
-              rel="noopener noreferrer"
-              download={product.download || undefined}
-              className="neo-button w-full flex items-center justify-center gap-2"
-            >
-              {product.buttonText || 'View Product'} <ExternalLink size={18} />
-            </a>
+            {product.onClick ? (
+              <button type="button" onClick={(e) => { e.stopPropagation(); product.onClick?.(); }} className="neo-button w-full flex items-center justify-center gap-2">
+                {product.buttonText || 'View Product'} <ExternalLink size={18} />
+              </button>
+            ) : (
+              <a 
+                href={product.link || '#'} 
+                target="_blank"
+                rel="noopener noreferrer"
+                download={product.download || undefined}
+                onClick={(e) => e.stopPropagation()}
+                className="neo-button w-full flex items-center justify-center gap-2"
+              >
+                {product.buttonText || 'View Product'} <ExternalLink size={18} />
+              </a>
+            )}
             <div className="text-[10px] font-mono text-center text-gray-400 uppercase tracking-widest">
               Released on {product.date}
             </div>
@@ -799,6 +815,7 @@ export default function App() {
   const [isTravelModalOpen, setIsTravelModalOpen] = useState(false);
   const [isTKModalOpen, setIsTKModalOpen] = useState(false);
   const [selectedArticle, setSelectedArticle] = useState<any>(null);
+  const [isSnowGuardOpen, setIsSnowGuardOpen] = useState(false);
 
   const renderContent = () => {
     switch (activeTab) {
@@ -806,7 +823,7 @@ export default function App() {
       case '关于我': return <AboutPage onNavigate={setActiveTab} onBookClick={() => setIsBookModalOpen(true)} onVideoClick={() => setIsVideoModalOpen(true)} onAIClick={() => setIsAIModalOpen(true)} onAdmissionClick={() => setIsAdmissionModalOpen(true)} onStockClick={() => setIsStockModalOpen(true)} onTravelClick={() => setIsTravelModalOpen(true)} onTKClick={() => setIsTKModalOpen(true)} onAIArticleClick={() => setSelectedArticle(articles.find(a => a.title === 'AI 编程初体验'))} onNewMediaClick={() => setSelectedArticle(articles.find(a => a.title === '一个新媒体运营的自我修养'))} onSocialPracticeClick={() => setSelectedArticle(articles.find(a => a.title === '专精与随性之间'))} />;
       case '文章': return <ArticlesPage onNavigate={setActiveTab} onArticleClick={(article) => setSelectedArticle(article)} />;
       case '视频': return <VideosPage />;
-      case '产品': return <ProductsPage />;
+      case '产品': return <ProductsPage onSnowGuardClick={() => setIsSnowGuardOpen(true)} />;
       default: return <HomePage onNavigate={setActiveTab} />;
     }
   };
@@ -830,6 +847,7 @@ export default function App() {
         <TravelModal isOpen={isTravelModalOpen} onClose={() => setIsTravelModalOpen(false)} />
         <TKModal isOpen={isTKModalOpen} onClose={() => setIsTKModalOpen(false)} />
         <ArticleModal isOpen={!!selectedArticle} onClose={() => setSelectedArticle(null)} article={selectedArticle} />
+        <SnowGuardModal isOpen={isSnowGuardOpen} onClose={() => setIsSnowGuardOpen(false)} />
         
         <main className="relative">
         <AnimatePresence mode="wait">
