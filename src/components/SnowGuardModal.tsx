@@ -8,7 +8,7 @@ interface SnowGuardModalProps {
 }
 
 const POSTER_PATH = encodeURI('/展板.jpg');
-const PDF_PATH = encodeURI('/雪山萌卫队IP策划案.pdf.pdf');
+const PDF_PATH = 'https://pan.baidu.com/s/1xddXKu-ZfdPMy8Uwatsjig?pwd=j682';
 
 export const SnowGuardModal: React.FC<SnowGuardModalProps> = ({ isOpen, onClose }) => {
   return (
@@ -58,7 +58,6 @@ export const SnowGuardModal: React.FC<SnowGuardModalProps> = ({ isOpen, onClose 
                 href={PDF_PATH}
                 target="_blank"
                 rel="noopener noreferrer"
-                download
                 className="neo-button w-full flex items-center justify-center gap-2"
               >
                 <Download size={18} /> 下载策划案 PDF

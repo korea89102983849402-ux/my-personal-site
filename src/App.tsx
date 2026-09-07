@@ -754,13 +754,13 @@ const ProductsPage = ({ onSnowGuardClick }: { onSnowGuardClick?: () => void }) =
       {[
         { id: '001', title: '学习路径规划师', desc: '根据你的目标，定制专属的学习路线图。', status: 'Released', date: '2024.03.10', color: 'bg-brand-yellow', link: '/planner/index.html', buttonText: 'View Product' },
         { id: '002', title: '破工非遗——鄂州雕花剪纸', desc: '调研报告 PPT（发展态势与数字转型之路）', status: 'Report', date: '2026.03.13', color: 'bg-brand-pink', link: encodeURI('/（PPT）破工非遗——鄂州雕花剪纸的发展态势与数字转型之路调查报告.pptx'), buttonText: '下载 PPT', download: true },
-        { id: '003', title: '苏州园林策划案', desc: '策划案 Word 文档（.docx）下载入口。', status: 'Plan', date: '2026.09.06', color: 'bg-brand-blue', link: encodeURI('/苏州园林策划案.docx'), buttonText: '下载策划案', download: true },
-        { id: '004', title: '清明上河图策划案', desc: '策划案 Word 文档（.docx）下载入口。', status: 'Plan', date: '2026.09.06', color: 'bg-brand-green', link: encodeURI('/清明上河图策划案.docx'), buttonText: '下载策划案', download: true },
-        { id: '005', title: '侠义襄阳策划案', desc: '策划案 Word 文档（.docx）下载入口。', status: 'Plan', date: '2026.09.06', color: 'bg-brand-pink', link: encodeURI('/侠义襄阳策划案.docx'), buttonText: '下载策划案', download: true },
-        { id: '006', title: '王老吉“吉崽”IP策划案', desc: '策划案 Word 文档（.docx）下载入口。', status: 'Plan', date: '2026.09.06', color: 'bg-brand-yellow', link: encodeURI('/王老吉“吉崽”IP策划案.docx'), buttonText: '下载策划案', download: true },
-        { id: '007', title: '武汉硚口工业焕新策划案', desc: '策划案 Word 文档（.docx）下载入口。', status: 'Plan', date: '2026.09.06', color: 'bg-brand-blue', link: encodeURI('/武汉硚口工业焕新策划案.docx'), buttonText: '下载策划案', download: true },
-        { id: '008', title: '“恐龙冒险队”科普IP策划', desc: '策划案 Word 文档（.docx）下载入口。', status: 'Plan', date: '2026.09.06', color: 'bg-brand-green', link: encodeURI('/“恐龙冒险队”科普IP策划.docx'), buttonText: '下载策划案', download: true },
-        { id: '009', title: '《斩神》IP出海策划案', desc: '策划案 Word 文档（.docx）下载入口。', status: 'Plan', date: '2026.09.06', color: 'bg-brand-pink', link: encodeURI('/《斩神》IP出海策划案.docx'), buttonText: '下载策划案', download: true },
+        { id: '003', title: '苏州园林策划案', desc: '策划案 Word 文档，通过百度网盘下载。', status: 'Plan', date: '2026.09.06', color: 'bg-brand-blue', link: 'https://pan.baidu.com/s/1a671e3dv7NycSCJmu5qHHA?pwd=63gk', buttonText: '下载策划案' },
+        { id: '004', title: '清明上河图策划案', desc: '策划案 Word 文档，通过百度网盘下载。', status: 'Plan', date: '2026.09.06', color: 'bg-brand-green', link: 'https://pan.baidu.com/s/1gRxxZhT-Mmah68q74LU23g?pwd=fj3p', buttonText: '下载策划案' },
+        { id: '005', title: '侠义襄阳策划案', desc: '策划案 Word 文档，通过百度网盘下载。', status: 'Plan', date: '2026.09.06', color: 'bg-brand-pink', link: 'https://pan.baidu.com/s/1f_g-ahZ1CPA8TxJqaOOclg?pwd=8sts', buttonText: '下载策划案' },
+        { id: '006', title: '王老吉“吉崽”IP策划案', desc: '策划案 Word 文档，通过百度网盘下载。', status: 'Plan', date: '2026.09.06', color: 'bg-brand-yellow', link: 'https://pan.baidu.com/s/1MLliYDTRq3EkZhBREVHHhw?pwd=63mu', buttonText: '下载策划案' },
+        { id: '007', title: '武汉硚口工业焕新策划案', desc: '策划案 Word 文档，通过百度网盘下载。', status: 'Plan', date: '2026.09.06', color: 'bg-brand-blue', link: 'https://pan.baidu.com/s/1tfcoqK4mzMS30_9ZvoB8Xg?pwd=k8bd', buttonText: '下载策划案' },
+        { id: '008', title: '“恐龙冒险队”科普IP策划', desc: '策划案 Word 文档，通过百度网盘下载。', status: 'Plan', date: '2026.09.06', color: 'bg-brand-green', link: 'https://pan.baidu.com/s/1382qT7OkPVlLP-xId9t-zw?pwd=vbuh', buttonText: '下载策划案' },
+        { id: '009', title: '《斩神》IP出海策划案', desc: '策划案 Word 文档，通过百度网盘下载。', status: 'Plan', date: '2026.09.06', color: 'bg-brand-pink', link: 'https://pan.baidu.com/s/1RoR-HPzp8hjQkpcsEeNteA?pwd=aqw2', buttonText: '下载策划案' },
         { id: '010', title: '雪山萌卫队IP策划案', desc: '点击查看展板并下载策划案 PDF。', status: 'Plan', date: '2026.09.06', color: 'bg-brand-blue', buttonText: '查看展板', onClick: onSnowGuardClick },
       ].map((product, i) => (
         <div key={i} onClick={product.onClick} className={`neo-card p-8 space-y-8 flex flex-col justify-between ${product.onClick ? 'cursor-pointer hover:bg-gray-50' : ''}`}>
